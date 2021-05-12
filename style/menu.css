@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: rgba(231, 187, 146, 0.834); 
+}
+
+main{
+    /* view width, height 사용자반응형 */
+    width: 40vw;
+    height: 60vh;
+    margin:150px auto;
+    display: grid;
+    /* grid template 이용하여 간단하게구성 */
+    grid-template-columns: repeat(2,20vw);
+    grid-template-rows: repeat(2,30vh );
+    /* grid 사이 빈공간 */
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vh;
+}
+
+main .menu{
+    background: #eb4d4b;
+    color: #ffffff;
+    
+    text-decoration-line : none;
+    display: grid;   
+}
+/* mouse hover event */
+main .menu:hover{
+    cursor:pointer;
+    font-size: 150%;
+}
+/* click event */
+.menu:active{
+    background-color:sienna;
+
+}
+.menuText{
+    
+    margin:0;
+    padding: 0;
+    
+    justify-self: center;
+    align-self: center;
+}

@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: rgba(231, 187, 146, 0.834); 
+}
+.loading{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+h1{
+    position:fixed;
+    bottom: 15vh;
+    color: blanchedalmond;
+    text-shadow: black;
+    animation: textColorGrad 6s linear infinite;
+
+}
+.box{
+    width: 70px;
+    height: 70px;
+    border: 2px solid white;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg) scale(2);
+    overflow: hidden;
+    position: relative;
+}
+.wave{
+    width:140px;
+    height:140px;
+    position: absolute;
+    border-radius: 33%;
+    animation: waves 5s linear infinite;
+}
+.grad{
+    background: linear-gradient(to right,#8c632dc2, #80401692);
+}
+@keyframes waves{
+
+    0%{
+        transform:rotate(0);
+        border-radius: 10%;
+        bottom: -110px;
+        left :70px;
+    }
+    45%{
+        border-radius: 39%;
+    }
+    100%{
+        transform:rotate(500deg);
+        border-radius: 30%;
+        bottom: -20px; 
+        left :-70px;
+    }
+}
+@keyframes textColorGrad{
+
+    0%{
+        color: blanchedalmond;
+    }
+    50%{
+        color:#80401692;
+    }
+    100%{
+        color: blanchedalmond;
+    }
+    
+}
