@@ -24,11 +24,15 @@ function loader(_success) {
 function pageTrans() {
     let loading = document.querySelector('.loading');
     window.addEventListener('load', function () {
+          console.log("test");
         //  test용 코드 (4초동안 페이지가 로드되면 로딩페이지 보여줌)
         loader();
+        console.log("test loader()");
+
         setTimeout(function () {
+            console.log("test2");
             loading.parentElement.removeChild(loading);
-            location.href = "./main_list.html";
+            location.href = "./maie_list.html";
         }, 4000);
     });
 }
