@@ -28,7 +28,7 @@ function pageTrans() {
         loader();
         setTimeout(function () {
             loading.parentElement.removeChild(loading);
-            location.href = "main_list.html";
+            location.href = "./main_list.html";
         }, 4000);
     });
 }
