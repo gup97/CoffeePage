@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html, button{
+    font-family: 'SDSamliphopangche_Outline';
+}
+
+img{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    top:30px;
+    left:40px;
+}

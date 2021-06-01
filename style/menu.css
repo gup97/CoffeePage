@@ -1,29 +1,49 @@
+
+:root{
+    --display-width:360px;
+    --display-height:400px;
+}
+header{
+    height: 15vh;
+}
 body{
     margin: 0;
     padding: 0;
-    background: rgba(231, 187, 146, 0.834); 
+    background: #fceecb;
+    
+}
+.test{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
-main{
+main{    
+    position:fixed;
+    font-size: 2em;
+
     /* view width, height 사용자반응형 */
-    width: 40vw;
-    height: 60vh;
-    margin:150px auto;
-    display: grid;
+    width: var(--display-width);
+    height: var(--display-height);
+    
     /* grid template 이용하여 간단하게구성 */
-    grid-template-columns: repeat(2,20vw);
-    grid-template-rows: repeat(2,30vh );
+    display: grid;
+    grid-template-columns: repeat(2,calc(var(--display-width) / 2));
+    grid-template-rows: repeat(2,calc(var(--display-height) / 2));
     /* grid 사이 빈공간 */
-    grid-column-gap: 2vw;
-    grid-row-gap: 2vh;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
 }
 
 main .menu{
-    background: #eb4d4b;
+    /* 메뉴색깔지정 */
+    background: #845b42;
     color: #ffffff;
     
     text-decoration-line : none;
     display: grid;   
+    /* 테두리둥글게 */
+    border-radius: 15px;
 }
 /* mouse hover event */
 main .menu:hover{
@@ -42,4 +62,15 @@ main .menu:hover{
     
     justify-self: center;
     align-self: center;
+}
+
+
+@media (max-width: 30em) {
+    .inner-container {
+      width: 100%;
+    }
+  
+    .login-container {
+      width: calc((100% - 50px) / 3 * 2);
+    }
 }

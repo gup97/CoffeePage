@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>coffee</title>
+    <link rel="stylesheet" href="/style/coffee.css">
+    <link rel="stylesheet" href="style/font.css">
+
 </head>
+
 <body>
-    <p>    
-        커피소개페이지
-    </p>
+    <a href="/main_list.html"><img src="/asset/js2.png" alt="log"></a>
+
+    <!-- partial:index.partial.html -->
+    <div class="options">
+        <button id="Americano">아메리카노</button>
+        <button id="au_lait">카페오레</button>
+        <button id="capuccino">카푸치노</button>
+        <button id="latte">라떼</button>
+        <button id="macchiato">마키아토</button>
+        <button id="mocha">모카</button>
+        <button id="ristretto">리스트레토</button>
+        <button id="espresso">에스프레소</button>
+        <button id="lungo">룽고</button>
+    </div>
+
+    <div class="container">
+        <h1 class="coffee_list"><-커피를 골라보세요!</h1>
+        <div class="cup">
+            <div class="test reset">
+                <div class="coffee">커피</div>
+                <div class="water">물</div>
+                <div class="liquor">리큐르</div>
+                <div class="milk">우유</div>
+                <div class="whipped_cream">휘핑크림</div>
+                <div class="milk_foam">우유거품</div>
+                <div class="steamed_milk">스팀밀크</div>
+                <div class="chocolate">초콜릿</div>
+            </div>
+            <div class="plate"></div>
+        </div>
+    </div>
+    <script src="src/coffee.js"></script>
 </body>
+
 </html>
