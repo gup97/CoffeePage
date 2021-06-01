@@ -12,7 +12,7 @@ function loader(_success) {
     t = setInterval(function () {
         w = w + 1;
         inner.textContent =innerText+ w + '%';
-        if (w === 100) {XMLDocument
+        if (w === 100) {
             w=0;
             clearInterval(t);
             if (_success) {
