@@ -1,0 +1,22 @@
+https://codepen.io/LauraRobertson/pen/OpOjxB/
+
+http://fff.cmiscm.com/#!/section/surfacewaves
+이거 분석을 해봄
+
+canvas 를 바꿀수없어서 코드를 분석해보니
+canvas를 작게만든뒤 네모난걸 svg를 덧대어서 동그랗게만든걸로 파악됨
+현재나는 canvas를 바꿀수없기에 막혀있음
+
+canvas의 위치를 바꿀수없아 작게만들었고
+그위에 svg파일을 올림
+
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes
+y축을 바꾸기위한작업중
+
+ Uncaught TypeError: Cannot read property
+ 에러가 뜨게되어서 해결방안을 찾았다.
+
+https://blog.meeta.io/10
+
+변수와 함수들의 스코프에서 문제가생겼다.
+수정해야겠다.

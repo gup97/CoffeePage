@@ -32,7 +32,7 @@ function pageTrans() {
         setTimeout(function () {
             console.log("test2");
             loading.parentElement.removeChild(loading);
-            location.href = "https://gup97.github.io/CoffeePage/main_list.html";
+            location.href = "./maie_list.html";
         }, 4000);
     });
 }
