@@ -50,10 +50,10 @@ body {
 }
 
 .options {
-    margin-top: 3vh;
+    margin-top: 4vh;
     display: flex;
     display: grid;  
-    grid-gap: 1.5vh;
+    grid-gap: 3vh;
     grid-template-rows: repeat(0, 35px);
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-evenly;
@@ -65,7 +65,7 @@ body {
 
     background: rgba(214, 217, 227, 0.6);
     outline: none;
-    font-size: 1rem;
+    font-size: 1.3rem;
     border: 2px solid #e6ded9;
     box-shadow: none;
     color: #363636;
@@ -221,23 +221,8 @@ div.whipped_cream {
 
 
 @media only screen and (min-width:1024px) {
-    .options {
-        display: grid;
-        grid-gap: 2vh;
-        grid-template-rows: repeat(8, 42px);
-        grid-template-columns: 240px;
-    }
     .options button {
         font-size: 2rem;
-    }
-    html{
-        --cup-width: 16vw;
-        --cup-height: 10vw;
-        --cup-border-width: 1.4vw;
-        
-    }
-    .t{
-        font-size: 30px;
     }
 
 }
