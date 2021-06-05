@@ -33,6 +33,7 @@ function pageTrans() {
             console.log("test2");
             loading.parentElement.removeChild(loading);
             location.href = "./main_list.html";
-        }, 4000);
+            //main
+        }, 4000); 
     });
 }
