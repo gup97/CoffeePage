@@ -1,3 +1,4 @@
+import{Liquid} from "./dropLiquid.js"
 class App {
     constructor() {
         this.canvas = document.createElement('canvas');
@@ -12,6 +13,7 @@ class App {
         });
 
         this.waveGroup = new WaveGroup();
+        this.liquid = new Liquid(3,2);
 
         this.resize();
 
@@ -33,8 +35,8 @@ class App {
     animate(t) {
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
 
-        this.waveGroup.draw(this.ctx);
 
+        this.waveGroup.draw(this.ctx);
         requestAnimationFrame(this.animate.bind(this));
     }
 }
@@ -108,6 +110,7 @@ class Wave {
         ctx.lineTo(prevX, prevY);
         ctx.lineTo(this.stageWidth, this.stageHeight);
         ctx.lineTo(this.points[0].x, this.stageHeight);
+        
         ctx.fill();
         ctx.closePath();
     }
