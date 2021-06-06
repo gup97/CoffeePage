@@ -8,10 +8,11 @@ html, button{
     font-family: 'SDSamliphopangche_Outline';
 }
 
-img{
+.home{
     position: fixed;
     width: 40px;
     height: 40px;
     top:30px;
     left:40px;
 }
+

@@ -1,19 +1,19 @@
-import{Liquid} from "./dropLiquid.js"
+import { Liquid } from "./dropLiquid.js"
 class App {
     constructor() {
-        this.canvas = document.createElement('canvas');
+        this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
-        document.body.appendChild(this.canvas);
-
+        this.mini = document.getElementById('mini');
+        this.mini.appendChild(this.canvas);
 
         window.addEventListener('resize', this.resize.bind(this), {
             once: false,
             passive: false,
             capture: false,
         });
-
+        this.waterdrop = new Waterdrop(230, 636, 30, 'blue', 0);
         this.waveGroup = new WaveGroup();
-        this.liquid = new Liquid(3,2);
+        this.liquid = new Liquid(3, 2);
 
         this.resize();
 
@@ -21,26 +21,74 @@ class App {
     }
 
     resize() {
-        this.stageWidth = document.body.clientWidth;
-        this.stageHeight = document.body.clientHeight;
+        // this.stageWidth = document.body.clientWidth;
+        // this.stageHeight = document.body.clientHeight;
+        // this.canvas.width = this.stageWidth*2;
+        // this.canvas.height = this.stageHeight*2;
+        // this.ctx.scale(2,2);
 
-        this.canvas.width = this.stageWidth * 2;
-        this.canvas.height = this.stageHeight * 2;
+        this.stageWidth = this.mini.offsetWidth;
+        this.stageHeight = this.mini.offsetWidth;
 
-        this.ctx.scale(2, 2);
+        this.canvas.width = this.stageWidth - 4;
+        this.canvas.height = this.stageWidth;
+        this.ctx.scale(1, 1);
+
+        let temp = document.body.clientHeight;
+        //temp=temp*0.0008;
+        temp = temp * 0.0008;
+
+        this.mini.style.transform = `scale(${temp})`;
+
 
         this.waveGroup.resize(this.stageWidth, this.stageHeight);
+
     }
 
     animate(t) {
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
 
-
+        this.waterdrop.draw(this.ctx, this.waveGroup);
         this.waveGroup.draw(this.ctx);
         requestAnimationFrame(this.animate.bind(this));
     }
 }
-
+class Waterdrop {
+    constructor(x, y, radius, color, speed) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color;
+        this.speed = 0.0001;
+    }
+    draw(ctx, waveGroup) {
+        this.move(waveGroup.limit);
+        ctx.beginPath();
+        ctx.strokeStyle = this.color;
+        ctx.fillStyle = this.color;
+        ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false);
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+    }
+    move(waveGroup) {
+        if (this.y < 600) {
+            this.y = this.y + this.speed;
+            this.speed += this.speed / 10;
+        }
+        else {
+            this.setColor(ame[0][check]);
+        }
+    }
+    setColor(color) {
+        this.color = color;
+    }
+    setball() {
+        this.speed = 0.0001;
+        this.x = 230;
+        this.y = -36;
+    }
+}
 class Wave {
     constructor(index, totalPoints, color) {
         this.index = index;
@@ -64,18 +112,20 @@ class Wave {
 
         this.init();
     }
-
+    setWaveColor(color) {
+        this.color = color;
+    }
     init() {
         for (let i = 0; i < this.totalPoints; i++) {
             this.points[i] = new Point(this.index + i, this.pointGap * i, this.centerY);
 
         }
     }
-    raisePointY(force,limit) {
-        
+    raisePointY(force, limit) {
+
         for (let i = 0; i < this.totalPoints; i++) {
             this.points[i].resetLimit(limit);
-            this.points[i].raiseY(force,limit);
+            this.points[i].raiseY(force, limit);
         }
     }
     decreasePointY(force) {
@@ -110,7 +160,7 @@ class Wave {
         ctx.lineTo(prevX, prevY);
         ctx.lineTo(this.stageWidth, this.stageHeight);
         ctx.lineTo(this.points[0].x, this.stageHeight);
-        
+
         ctx.fill();
         ctx.closePath();
     }
@@ -119,7 +169,7 @@ class Wave {
 }
 class Point {
     constructor(index, x, y) {
-        this.floor = y+y+20;
+        this.floor = y + y + 20;
         this.x = x;
         this.y = this.floor;
         this.fixedY = this.floor;
@@ -130,7 +180,7 @@ class Point {
         //limit=0.5~820
     }
     resetLimit(limit) {
-        this.limit = (this.floor-this.floor*limit);
+        this.limit = (this.floor - this.floor * limit);
     }
     //y축을 바꾸기위함
     raiseY(force) {
@@ -142,7 +192,6 @@ class Point {
     decreaseY(force) {
         if (this.fixedY < this.floor) {
             this.fixedY = this.fixedY - force;
-            console.log(this.fixedY);
         }
         this.y = this.fixedY + (Math.sin(this.cur) * this.max);
 
@@ -161,11 +210,11 @@ class WaveGroup {
             '#f0ebe5',
             '#b1dce2',
             '#ffd7b3',
-            ];
+        ];
 
         this.num = 0;
         this.test = 0;
-        this.limit= 0;
+        this.limit = 0;
         this.waves = [];
 
         for (let i = 0; i < this.totalWaves; i++) {
@@ -180,7 +229,7 @@ class WaveGroup {
     setCoffee(num, test, limit) {
         this.num = num;
         this.test = test;
-        this.limit =limit;
+        this.limit = limit;
     }
     resize(stageWidth, stageHeight) {
         for (let i = 0; i < this.totalWaves; i++) {
@@ -194,11 +243,12 @@ class WaveGroup {
             const wave = this.waves[i];
             wave.draw(ctx);
         }
-        this.vertical(this.num, this.test,this.limit);
+        this.vertical(this.num, this.test, this.limit);
     }
     vertical(waveNum, force, limit) {
         if (force > 0) {
-            this.waves[waveNum].raisePointY(force,limit);
+            this.waves[waveNum].raisePointY(force, limit);
+            this.waves[waveNum].setWaveColor(ame[coffeeN][check]);
         }
         else {
             for (let i = 0; i < this.totalWaves; i++) {
@@ -208,26 +258,97 @@ class WaveGroup {
     }
 }
 
-let check = 0;
 window.onload = () => {
     const contents = new App();
     const buttons = document.querySelectorAll("button");
+    const navText = document.querySelector(".recipe");
     [...buttons].forEach((button) => {
         button.addEventListener("click", () => {
             if (button.id == "Americano") {
-                contents.waveGroup.setCoffee(0, 5, 0.9);
+                navText.innerText=ame[0][check];
+                const aheight =3;
+                coffeeN = 1;
+                if (check == -1) {
+                    check += 1;
+                    t(aheight);
+                }
+                else if (check < 0) {
+                    check += 1;
+                }
             }
             if (button.id == "au_lait") {
-                contents.waveGroup.setCoffee(1, 5,0.8);
+                coffeeN = 2;
+                const height =7;
+                if (check == -1) {
+                    check += 1;
+                    t(height);
+                }
+                else if (check < 0) {
+                    check += 1;
+                }
             }
             if (button.id == "capuccino") {
-                contents.waveGroup.setCoffee(2, 1,0.2);
+                const height =7;
+                coffeeN = 3;
+                if (check == -1) {
+                    check += 1;
+                    t(height);
+                }
+                else if (check < 0) {
+                    check += 1;
+                }
             }
-            
+
             if (button.id == "reset") {
                 contents.waveGroup.setCoffee(0, -3);
-                console.log("a");
+                stack = 0;
+                check = -1;
+
+            }
+            function t(height) {
+                var testInterval = setInterval(function () {
+                    if(check==-1||check>height){return;}
+                    s();
+                }, 2400);
+                setTimeout(function () {
+                    clearTimeout(testInterval);
+                }, 20000);
+            }
+            function s() {
+                contents.waterdrop.setball();
+                setTimeout(function () {
+                    if(check==-1){
+                        return;
+                    }
+                    stack += 0.1;
+                    check += 1;
+                    contents.waveGroup.setCoffee(0, 5, stack);
+                }, 2200);
             }
         });
     });
 }
+
+let stack = 0;
+let check = -1;
+let coffeeN=1;
+let ame = [
+    //ball color
+    [
+        'red',
+        'blue',
+        'yellow',
+        '#f0ebe5',
+        '#b1dce2',
+        '#ffd7b3',
+    ],
+    [
+        'green',
+        'green',
+        'green',
+        '#green',
+        '#b1dce2',
+        '#ffd7b3',
+    ]
+
+]

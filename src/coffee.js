@@ -18,7 +18,6 @@ const changeCoffeeType = (selected) => {
 
   current_element.classList.add("selected");
   coffee_list.innerText = selected.innerText;
-  console.log("object2") 
 };
 
 const setActiveType = (element) => {

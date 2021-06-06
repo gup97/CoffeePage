@@ -7,36 +7,42 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 body{
+
+
     background-color: #fceecb;
     width: 100%;
     height: 100%;
     overflow: hidden;
     z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-    
+
 /* https://stackoverflow.com/questions/5127937/how-to-center-canvas-in-html5 */
 canvas {
+    
+    aspect-ratio: 1/1;
     background-color: white;
     padding: 0;
     margin: auto;
     display: block;
-    width: 466px;
-    height: 466px;
     position: absolute;
     overflow: hidden;
+    
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 8;
+    
 }
+
 .e{
     overflow: hidden;
-
     padding: 0;
     margin: auto;
     display: block;
-    width: 466px;
-    height: 466px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -45,8 +51,9 @@ canvas {
     z-index: 10;
 }
 .mask{
+    margin-right: 10px;
     z-index: 9;
-    opacity:1
+    fill: #fceecb;
 }
 html{
     width: 100%;
@@ -54,6 +61,43 @@ html{
     
 }
 
-.contents{
-    fill:#fceecb;
+.button{
+    position: fixed;
+    grid-gap: 4vw;
+    margin-top: 70vh;
+}
+#mini{
+    
+    width: 476px;
+    height: 476px;
+    position: absolute;
+    z-index: 1;
+}
+
+
+.button{
+    display: flex;
+    transform: scale(1.3);
+}
+.image{
+    background-image: url(../asset/logo.png);
+    width: 100vw;
+    height: 20vh;
+    top: 0vh;
+    background-position: center;
+    background-size: 75%;
+    vertical-align: top;
+    position: fixed;
+}
+nav{
+    position: fixed;
+    background-color: blueviolet;
+    width: 100vw;
+    height: 4vh;
+    top:20vh;
+    text-align: center;
+    z-index: 13;
+}
+.recipe{
+    font-size: 4vh;
 }
