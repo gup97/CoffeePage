@@ -11,7 +11,7 @@ function loader(_success) {
     let w = 0;
     t = setInterval(function () {
         w = w + 1;
-        inner.textContent =innerText+ w + '%';
+        inner.textContent =innerText+ w + '°C';
         if (w === 100) {
             w=0;
             clearInterval(t);

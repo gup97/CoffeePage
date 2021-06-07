@@ -9,7 +9,7 @@
 body{
 
 
-    background-color: #fceecb;
+    background-color: white;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -53,7 +53,7 @@ canvas {
 .mask{
     margin-right: 10px;
     z-index: 9;
-    fill: #fceecb;
+    fill: white;
 }
 html{
     width: 100%;
@@ -83,19 +83,19 @@ html{
     background-image: url(../asset/logo.png);
     width: 100vw;
     height: 20vh;
-    top: 0vh;
+    top: 6vh;
     background-position: center;
     background-size: 75%;
     vertical-align: top;
     position: fixed;
 }
-nav{
+.temp{
     position: fixed;
+    width: 23vw;
+    height: 6vh;
     background-color: blueviolet;
-    width: 100vw;
-    height: 4vh;
-    top:20vh;
-    text-align: center;
+    top:70vh;
+    text-align: left;
     z-index: 13;
 }
 .recipe{

@@ -4,8 +4,14 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: '116angmuburi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/116angmuburi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 html, button{
-    font-family: 'SDSamliphopangche_Outline';
+    font-family: '116angmuburi';
 }
 
 .home{

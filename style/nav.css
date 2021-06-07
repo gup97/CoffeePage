@@ -1,0 +1,39 @@
+nav{
+    top:0vh;
+    position: absolute;
+    width: 100%;
+
+}
+li{
+    font-size: 6vh;
+    z-index: 100;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: skyblue;
+    flex-direction: column;
+}
+.logo{
+    width: 120px;
+}
+.navbar_logo{
+    width: 100%;
+}
+.navbar_menu{
+    background-color: skyblue;
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+
+}
+.navbar_toogleBtn{
+    position: absolute;
+    left : 20px;
+}
+
+.active{
+    display: block;
+}

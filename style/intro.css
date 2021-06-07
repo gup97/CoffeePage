@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: rgba(231, 187, 146, 0.834); 
+    background: white; 
 }
 .loading{
     height: 100vh;
@@ -10,32 +10,46 @@ body{
     align-items: center;
 
 }
-h1{
+.subheading{
+    position: fixed;
+    display: flex;
+    top:15vh;
+    font-size: 3em;
+}
+
+.tmp{
+    font-size: 1.5rem;
     position:fixed;
-    bottom: 15vh;
-    color: blanchedalmond;
+    bottom: 30vh;
+    color: white;
     text-shadow: black;
     animation: textColorGrad 6s linear infinite;
 
 }
+:root{
+    --water-width:70px;
+    --water-height:70px;
+    --water-scale:1.8;
+}
 .box{
-    width: 70px;
-    height: 70px;
-    border: 2px solid white;
+    width: var(--water-width);
+    height: var(--water-height);
+    border: 0px solid white;
     border-radius: 0 50% 50% 50%;
-    transform: rotate(45deg) scale(2);
+    transform: rotate(45deg) scale(var(--water-scale));
     overflow: hidden;
     position: relative;
 }
 .wave{
-    width:140px;
-    height:140px;
+    width: calc(var(--water-width)*2);
+    height: calc(var(--water-height)*2);
     position: absolute;
     border-radius: 33%;
     animation: waves 5s linear infinite;
 }
+
 .grad{
-    background: linear-gradient(to right,#8c632dc2, #80401692);
+    background: linear-gradient(to right,rgb(92, 92, 255),rgb(92, 92, 255));
 }
 @keyframes waves{
 
@@ -58,13 +72,19 @@ h1{
 @keyframes textColorGrad{
 
     0%{
-        color: blanchedalmond;
+        color:gainsboro;
     }
     50%{
-        color:#80401692;
+        color:black;
     }
     100%{
-        color: blanchedalmond;
+        color: black;
     }
     
 }
+@media (max-width: 480px) {
+    :root{
+         --water-scale:1;
+    }
+}
+

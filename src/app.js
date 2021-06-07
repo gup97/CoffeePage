@@ -87,6 +87,7 @@ class Waterdrop {
     setball() {
         this.speed = 0.0001;
         this.x = 230;
+        // 안보이게
         this.y = -28;
     }
 }
@@ -208,7 +209,7 @@ class WaveGroup {
         this.totalWaves = 3;
         this.totalPoints = 8;
         this.color = [
-            '#f0ebe5',
+            'red',
             '#b1dce2',
             '#ffd7b3',
         ];
@@ -221,7 +222,7 @@ class WaveGroup {
         for (let i = 0; i < this.totalWaves; i++) {
             const wave = new Wave(
                 i,
-                this.totalPoints,
+                this.totalPoints, 
                 this.color[i],
             );
             this.waves[i] = wave;
@@ -248,8 +249,8 @@ class WaveGroup {
     }
     vertical(waveNum, force, limit) {
         if (force > 0) {
-            this.waves[waveNum].raisePointY(force, limit);
             this.waves[waveNum].setWaveColor(ame[coffeeN][check]);
+            this.waves[waveNum].raisePointY(force, limit);
         }
         else {
             for (let i = 0; i < this.totalWaves; i++) {
@@ -273,9 +274,7 @@ window.onload = () => {
                     check += 1;
                     t(aheight);
                 }
-                else if (check < 0) {
-                    check += 1;
-                }
+
                 else{
                     reset();
                 }
@@ -287,7 +286,7 @@ window.onload = () => {
                     check += 1;
                     t(height);
                 }
-                else if (check < 0) {
+                else if (check < -1) {
                     check += 1;
                 }
             }
@@ -330,8 +329,8 @@ window.onload = () => {
                     }
                     stack += 0.1;
                     check += 1;
-                    contents.waveGroup.setCoffee(0, 1, stack);
-                }, 2200);
+                    contents.waveGroup.setCoffee(0, 0.8, stack);
+                }, 2800);
             }
         });
     });
@@ -351,10 +350,10 @@ let ame = [
         '#ffd7b3',
     ],
     [
-        'green',
-        'green',
-        'green',
-        '#green',
+        'red',
+        'yellow',
+        'orange',
+        'black',
         '#b1dce2',
         '#ffd7b3',
     ],

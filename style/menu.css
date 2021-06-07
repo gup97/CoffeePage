@@ -1,7 +1,7 @@
 
 :root{
     --display-width:330px;
-    --display-height:390px;
+    --display-height:330px;
 }
 header{
     height: 15vh;
@@ -19,8 +19,8 @@ body{
 }
 
 main{    
-    position:fixed;
-    font-size: 2em;
+    position:absolute;
+    font-size: 2.3em;
 
     /* view width, height 사용자반응형 */
     width: var(--display-width);
@@ -33,9 +33,11 @@ main{
     /* grid 사이 빈공간 */
     grid-column-gap: 15px;
     grid-row-gap: 15px;
+
 }
 
 main .menu{
+    
     /* 메뉴색깔지정 */
     background: #845b42;
     color: #ffffff;
