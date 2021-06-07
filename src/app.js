@@ -1,6 +1,7 @@
 import { Liquid } from "./dropLiquid.js"
 class App {
     constructor() {
+
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
         this.mini = document.getElementById('mini');
@@ -11,7 +12,7 @@ class App {
             passive: false,
             capture: false,
         });
-        this.waterdrop = new Waterdrop(230, 620, 30, 'blue', 0);
+        this.waterdrop = new Waterdrop(230, 1000, 30, 0);
         this.waveGroup = new WaveGroup();
         this.liquid = new Liquid(3, 2);
 
@@ -58,11 +59,12 @@ class Waterdrop {
         this.x = x;
         this.y = y;
         this.radius = radius;
-        this.color = color;
+        this.color = ame[0][0];
         this.speed = 0.0001;
+        
     }
     draw(ctx, waveGroup) {
-        this.move(waveGroup.limit);
+        this.move(waveGroup);
         ctx.beginPath();
         ctx.strokeStyle = this.color;
         ctx.fillStyle = this.color;
@@ -72,23 +74,47 @@ class Waterdrop {
         ctx.closePath();
     }
     move(waveGroup) {
-        if (this.y < 600) {
+        if(this.y>900){
+            return
+        }
+        if (this.y < 550) {
             this.y = this.y + this.speed;
             this.speed += this.speed / 12;
         }
         else {
-            console.log(this.y);
+            stack += 0.1;
+            check += 1;
+            
             this.setColor(ame[0][check]);
+            
+            const navText = document.querySelector(".recipe");
+            navText.innerHTML = navText.innerHTML + material[0][check-1];
+            waveGroup.setCoffee(0,0.5, stack);
+            this.setBall();
+
+            // waveGroup.setCoffee(0, -3);
         }
     }
-    setColor(color) {
-        this.color = color;
-    }
-    setball() {
+    setBall() {
+        if(this.color==undefined){
+            this.y = 1000;
+            this.speed =0;
+            return;
+        }
         this.speed = 0.0001;
         this.x = 230;
         // 안보이게
         this.y = -28;
+    }
+    resetBall() {
+        const navText = document.querySelector(".recipe");
+        navText.innerHTML = "";
+
+        this.y = 1000;
+        this.speed =0;
+    }
+    setColor(color) {
+        this.color = color;
     }
 }
 class Wave {
@@ -263,91 +289,55 @@ class WaveGroup {
 window.onload = () => {
     const contents = new App();
     const buttons = document.querySelectorAll("button");
-    const navText = document.querySelector(".recipe");
     [...buttons].forEach((button) => {
         button.addEventListener("click", () => {
             if (button.id == "Americano") {
-                navText.innerText=ame[0][check];
-                const aheight =3;
-                coffeeN = 1;
-                if (check == -1) {
-                    check += 1;
-                    t(aheight);
-                }
-
-                else{
+                if(check!=0){
                     reset();
+                    return;
                 }
+                console.log("americano");
+                coffeeN = 1;
+                contents.waterdrop.setBall();
             }
             if (button.id == "au_lait") {
-                coffeeN = 2;
-                const height =7;
-                if (check == -1) {
-                    check += 1;
-                    t(height);
-                }
-                else if (check < -1) {
-                    check += 1;
-                }
+                navText.innerText=ame[0][check];
+                coffeeN = 1;
+                contents.waterdrop.setBall();
             }
             if (button.id == "capuccino") {
-                const height =7;
-                coffeeN = 3;
-                if (check == -1) {
-                    check += 1;
-                    t(height);
-                }
-                else if (check < 0) {
-                    check += 1;
-                }
+                navText.innerText=ame[0][check];
+                coffeeN = 1;
+                contents.waterdrop.setBall();
             }
-
             if (button.id == "reset") {
                 reset();
             }
             function reset() {
+                console.log("reset");
+                contents.waterdrop.resetBall();
                 contents.waveGroup.setCoffee(0, -3);
                 stack = 0;
-                check = -1;
-            }
-            function t(height) {
-                var testInterval = setInterval(function () {
-                    if(check==-1||check>height){return;}
-                    s();
-                }, 3000);
-                setTimeout(function () {
-                    clearTimeout(testInterval);
-                }, 20000);
-            }
-            function s() {
-                console.log("ball");
-                contents.waterdrop.setball();
-                setTimeout(function () {
-                    console.log("wave up");
-                    if(check==-1){
-                        return;
-                    }
-                    stack += 0.1;
-                    check += 1;
-                    contents.waveGroup.setCoffee(0, 0.8, stack);
-                }, 2800);
+                check = 0;
             }
         });
     });
 }
 
+//wave height 100% 
 let stack = 0;
-let check = -1;
+//n 번째 돌아가는중
+let check = 0;
 let coffeeN=1;
 let ame = [
     //ball color
     [
-        'red',
-        'blue',
-        'yellow',
-        '#f0ebe5',
-        '#b1dce2',
-        '#ffd7b3',
+        'skyblue',
+        'brown',
+        'brown',
+        'brown',
+        'gray',
+        'gray',
     ],
     [
         'red',
@@ -373,5 +363,16 @@ let ame = [
         '#b1dce2',
         '#ffd7b3',
     ],
+]
 
+let material = [
+    //ball color
+    [
+        '<span class="water">●</span>water ',
+        '<span class="coffeee">●</span>coffee ',
+        '',
+        '',
+        '<span class="milk">●</span>milk ',
+        '',
+    ]
 ]

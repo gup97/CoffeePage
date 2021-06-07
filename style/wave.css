@@ -91,13 +91,26 @@ html{
 }
 .temp{
     position: fixed;
-    width: 23vw;
+    width: 30vw;
     height: 6vh;
-    background-color: blueviolet;
+    background-color: white;
     top:70vh;
-    text-align: left;
+    text-align: center;
     z-index: 13;
 }
 .recipe{
     font-size: 4vh;
+}
+
+.water{
+    color: cornflowerblue;
+    font-size: 70%;
+}
+.coffeee{
+    color: brown;
+    font-size: 70%;
+}
+.milk{
+    color:cornsilk;
+    font-size: 70%;
 }

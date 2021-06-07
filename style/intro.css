@@ -20,7 +20,7 @@ body{
 .tmp{
     font-size: 1.5rem;
     position:fixed;
-    bottom: 30vh;
+    bottom: 100px;
     color: white;
     text-shadow: black;
     animation: textColorGrad 6s linear infinite;
