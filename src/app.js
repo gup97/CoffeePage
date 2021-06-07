@@ -275,6 +275,9 @@ window.onload = () => {
                 else if (check < 0) {
                     check += 1;
                 }
+                else{
+                    reset();
+                }
             }
             if (button.id == "au_lait") {
                 coffeeN = 2;
@@ -300,10 +303,12 @@ window.onload = () => {
             }
 
             if (button.id == "reset") {
+                reset();
+            }
+            function reset() {
                 contents.waveGroup.setCoffee(0, -3);
                 stack = 0;
                 check = -1;
-
             }
             function t(height) {
                 var testInterval = setInterval(function () {
@@ -315,8 +320,10 @@ window.onload = () => {
                 }, 20000);
             }
             function s() {
+                console.log("ball");
                 contents.waterdrop.setball();
                 setTimeout(function () {
+                    console.log("wave up");
                     if(check==-1){
                         return;
                     }
@@ -349,6 +356,22 @@ let ame = [
         '#green',
         '#b1dce2',
         '#ffd7b3',
-    ]
+    ],
+    [
+        'yellow',
+        'yellow',
+        'yellow',
+        '#green',
+        '#b1dce2',
+        '#ffd7b3',
+    ],
+    [
+        'black',
+        'black',
+        'black',
+        '#green',
+        '#b1dce2',
+        '#ffd7b3',
+    ],
 
 ]
