@@ -11,7 +11,7 @@ class App {
             passive: false,
             capture: false,
         });
-        this.waterdrop = new Waterdrop(230, 636, 30, 'blue', 0);
+        this.waterdrop = new Waterdrop(230, 620, 30, 'blue', 0);
         this.waveGroup = new WaveGroup();
         this.liquid = new Liquid(3, 2);
 
@@ -31,7 +31,7 @@ class App {
         this.stageHeight = this.mini.offsetWidth;
 
         this.canvas.width = this.stageWidth - 4;
-        this.canvas.height = this.stageWidth;
+        this.canvas.height = this.stageWidth -1;
         this.ctx.scale(1, 1);
 
         let temp = document.body.clientHeight;
@@ -74,9 +74,10 @@ class Waterdrop {
     move(waveGroup) {
         if (this.y < 600) {
             this.y = this.y + this.speed;
-            this.speed += this.speed / 10;
+            this.speed += this.speed / 12;
         }
         else {
+            console.log(this.y);
             this.setColor(ame[0][check]);
         }
     }
@@ -86,7 +87,7 @@ class Waterdrop {
     setball() {
         this.speed = 0.0001;
         this.x = 230;
-        this.y = -36;
+        this.y = -28;
     }
 }
 class Wave {
@@ -314,7 +315,7 @@ window.onload = () => {
                 var testInterval = setInterval(function () {
                     if(check==-1||check>height){return;}
                     s();
-                }, 2400);
+                }, 3000);
                 setTimeout(function () {
                     clearTimeout(testInterval);
                 }, 20000);
@@ -329,7 +330,7 @@ window.onload = () => {
                     }
                     stack += 0.1;
                     check += 1;
-                    contents.waveGroup.setCoffee(0, 5, stack);
+                    contents.waveGroup.setCoffee(0, 1, stack);
                 }, 2200);
             }
         });
