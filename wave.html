@@ -5,29 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./style/wave.css">
     <link rel="stylesheet" href="./style/font.css">
     <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" type="text/css" href="./style/wave.css">
 
 </head>
 
 <body>
-    <header class="image"></header>
+    <header class="eng">
+        COFFEE Recipe
+    </header>
     <nav class="navbar">
-        <a href="#" class="navbar_toogleBtn">
-            aa
+        <a href="#" class="navbar_toogleBtn ham">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </a>
         <div class="navbar__logo">
-            <img class="logo" src="./asset/black_logo.png" alt="">
+            <a href="./top.html">
+            <img class="logo" src="./asset/new_logo.png" alt="" >
+            </a>
         </div>
         <ul class="navbar_menu">
-            <li>커피한잔만들어요</li>
-            <li>커피같이마셔요</li>
-            <li>명칭이뭐에요</li>
+            <li><a href="./Roasting.html">Roasting</a></li>
+            <li><a href="./Blending.html">Blending</a></li>
+            <li><a href="./Grinding.html">Grinding</a></li>
+            <li><a href="./Brewing.html">Brewing</a></li>
+            <li><a href="./wave.html">커피 한 잔 만들어요</a></li>
         </ul>
     </nav>
-    <script src="./src/nav.js"></script>
-    
+    <div class="subheading">
+        커피 한 잔 만들어요
+    </div>
+
     <div class="temp">
         <div class="recipe"></div>
     </div>
@@ -50,6 +60,7 @@
         <button id="capuccino">카푸치노</button>
         <button id="reset">reset</button>
     </div>
+    <script src="./src/nav.js"></script>
     <script type="module" src="./src/app.js"></script>
 </body>
 

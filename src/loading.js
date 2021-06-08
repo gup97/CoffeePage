@@ -32,7 +32,7 @@ function pageTrans() {
         setTimeout(function () {
             console.log("test2");
             loading.parentElement.removeChild(loading);
-            location.href = "./main_list.html";
+            location.href = "./top.html";
             //main
         }, 4000); 
     });

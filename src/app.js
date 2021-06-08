@@ -1,4 +1,3 @@
-import { Liquid } from "./dropLiquid.js"
 class App {
     constructor() {
 
@@ -14,7 +13,6 @@ class App {
         });
         this.waterdrop = new Waterdrop(230, 1000, 30, 0);
         this.waveGroup = new WaveGroup();
-        this.liquid = new Liquid(3, 2);
 
         this.resize();
 
@@ -82,7 +80,7 @@ class Waterdrop {
             this.speed += this.speed / 12;
         }
         else {
-            stack += 0.1;
+            stack += stack_per;
             check += 1;
             
             this.setColor(ame[0][check]);
@@ -292,6 +290,7 @@ window.onload = () => {
     [...buttons].forEach((button) => {
         button.addEventListener("click", () => {
             if (button.id == "Americano") {
+                stack_per=0.09;
                 if(check!=0){
                     reset();
                     return;
@@ -326,9 +325,13 @@ window.onload = () => {
 
 //wave height 100% 
 let stack = 0;
+let stack_per = 0;
 //n 번째 돌아가는중
 let check = 0;
 let coffeeN=1;
+//
+//에스프레소 #3E1D08  
+
 let ame = [
     //ball color
     [

@@ -1,19 +1,42 @@
+/* 영문 폰트(Fugaz One) */
+/* <link rel="preconnect" href="https://fonts.gstatic.com"> */
+/* <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet"> */
+/* -----------------------------
+CSS */
 @font-face {
-    font-family: 'SDSamliphopangche_Outline';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Fugaz One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/fugazone/v10/rax_HiWKp9EAITukFsl8Axhf.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-@font-face {
-    font-family: '116angmuburi';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/116angmuburi.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-html, button{
-    font-family: '116angmuburi';
-}
+/* font-family: 'Fugaz One', cursive; */
 
+/* -----------------------------
+한글 폰트(나눔라운드스퀘어) */
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* -----------------------------
+한글 폰트(116앵무부리) */
+@font-face { 
+    font-family: '116angmuburi'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/116angmuburi.woff') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; } 
+html, button,.angmu{
+    font-family: '116angmuburi';
+}
+    .eng{
+        font-family: 'Fugaz One';
+}
+body{
+    margin: 0
+}
 .home{
     position: fixed;
     width: 40px;
@@ -21,4 +44,7 @@ html, button{
     top:30px;
     left:40px;
 }
-
+header{
+        font-size: 2rem;
+        
+}

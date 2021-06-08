@@ -1,0 +1,93 @@
+html{
+    display: flex;
+}
+header{
+    margin-top: 50px;
+    margin-left: 10px;
+}
+section {
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;    
+}
+img{
+    width: 100%;
+}
+.imageBox,
+.imageBox-Blending{
+    margin: 5px;
+}
+.explain{
+    margin: 5px;
+    font-family: 'NanumSquareRound';
+    border: 2px solid;
+    font-size: 1.2rem;
+}
+.mobTrail{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+}
+.pic-img{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+}
+.arrow{
+    position:absolute;
+    width: 5vw;
+    left:49vw;
+    bottom: 2vh;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 820px) {
+    header{
+        margin-left: 10vw;
+    }
+    .imageBox{
+        width: 40vw;
+        overflow: hidden;
+    }
+    .imageBox-Blending{
+        width: 99%;
+        overflow: hidden;
+    }
+    article{
+        height:600px;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+    }
+    article.Blending{
+        height:100%;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-around;
+    }
+    article.Grinding{
+        height:100%;
+        flex-direction:row-reverse;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    section{
+        width: 80vw;
+        margin-left: 10vw;
+    }
+    section.reverse{
+        width: 80vw;
+        margin-left: 10vw;
+        display: flex;
+        flex-direction:row;
+    }
+    .explain{
+        font-size: 1.8rem;
+    }
+    .blnk{
+        width: 80px;
+    }    
+}

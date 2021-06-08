@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/font.css">
+    <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" href="./style/layout.css">
+
+</head>
+
+<body>
+    <picture>
+        <source media="(min-width: 820px)" srcset="../asset/PC_MainTop.png" />
+        <source media="(min-width: 1px)" srcset="../asset/Mobile_MainTop.png" />
+        <img class="pic-img" src="./image/contents.jpg" width="100vw" height="100vh" />
+    </picture>
+    <div class="arrow">
+        <img  src="./asset/down_arrow.png" alt="">
+    </div>
+
+    <nav class="navbar">
+        <a href="#" class="navbar_toogleBtn ham">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </a>
+        <div class="navbar__logo">
+            <a href="./top.html">
+            <img class="logo" src="./asset/new_logo.png" alt="" >
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="./Roasting.html">Roasting</a></li>
+            <li><a href="./Blending.html">Blending</a></li>
+            <li><a href="./Grinding.html">Grinding</a></li>
+            <li><a href="./Brewing.html">Brewing</a></li>
+            <li><a href="./wave.html">커피 한 잔 만들어요</a></li>
+        </ul>
+    </nav>
+
+    <script src="./src/nav.js"></script>
+</body>
+
+</html>
