@@ -10,11 +10,11 @@ body{
     align-items: center;
 
 }
-.subheading{
+.loading-text{
     position: fixed;
     display: flex;
     top:15vh;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .tmp{

@@ -11,8 +11,8 @@ class App {
             passive: false,
             capture: false,
         });
-        this.waterdrop = new Waterdrop(230, 1000, 30, 0);
         this.waveGroup = new WaveGroup();
+        this.waterdrop = new Waterdrop(230, 1000, 30,'red',0);
 
         this.resize();
 
@@ -57,7 +57,7 @@ class Waterdrop {
         this.x = x;
         this.y = y;
         this.radius = radius;
-        this.color = ame[0][0];
+        this.color = ballColor[coffeeN][check];
         this.speed = 0.0001;
         
     }
@@ -65,6 +65,9 @@ class Waterdrop {
         this.move(waveGroup);
         ctx.beginPath();
         ctx.strokeStyle = this.color;
+        if(this.color=="white"){
+            ctx.strokeStyle = "black";
+        }
         ctx.fillStyle = this.color;
         ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false);
         ctx.fill();
@@ -73,9 +76,12 @@ class Waterdrop {
     }
     move(waveGroup) {
         if(this.y>900){
+
             return
         }
+
         if (this.y < 550) {
+
             this.y = this.y + this.speed;
             this.speed += this.speed / 12;
         }
@@ -83,10 +89,8 @@ class Waterdrop {
             stack += stack_per;
             check += 1;
             
-            this.setColor(ame[0][check]);
-            
             const navText = document.querySelector(".recipe");
-            navText.innerHTML = navText.innerHTML + material[0][check-1];
+            navText.innerHTML = navText.innerHTML + material[coffeeN][check-1];
             waveGroup.setCoffee(0,0.5, stack);
             this.setBall();
 
@@ -94,6 +98,8 @@ class Waterdrop {
         }
     }
     setBall() {
+        this.setColor(ballColor[coffeeN][check]);
+
         if(this.color==undefined){
             this.y = 1000;
             this.speed =0;
@@ -273,7 +279,7 @@ class WaveGroup {
     }
     vertical(waveNum, force, limit) {
         if (force > 0) {
-            this.waves[waveNum].setWaveColor(ame[coffeeN][check]);
+            this.waves[waveNum].setWaveColor(array[check-1]);
             this.waves[waveNum].raisePointY(force, limit);
         }
         else {
@@ -290,30 +296,52 @@ window.onload = () => {
     [...buttons].forEach((button) => {
         button.addEventListener("click", () => {
             if (button.id == "Americano") {
+                if(check!=0){reset();return;}
+                coffeeWaveArray(62,29,8,106,60,0,10,array);
+                coffeeN = 1;
                 stack_per=0.09;
+                console.log("americano");
+                contents.waterdrop.setBall();
+            }
+            if (button.id == "capuccino") {
                 if(check!=0){
                     reset();
                     return;
                 }
-                console.log("americano");
-                coffeeN = 1;
+                coffeeWaveArray(62,29,8,255,208,0,14,array);
+                coffeeN = 2;
+                stack_per=0.065;
+                console.log("capuccino");
                 contents.waterdrop.setBall();
             }
             if (button.id == "au_lait") {
-                navText.innerText=ame[0][check];
-                coffeeN = 1;
+                if(check!=0){
+                    reset();
+                    return;
+                }
+                coffeeWaveArray(253,253,253,255, 250, 235,12,array);
+                coffeeN = 3;
+                stack_per=0.075;
+                console.log("au_lait");
                 contents.waterdrop.setBall();
             }
-            if (button.id == "capuccino") {
-                navText.innerText=ame[0][check];
-                coffeeN = 1;
+            if (button.id == "makiyato") {
+                if(check!=0){
+                    reset();
+                    return;
+                }
+                coffeeWaveArray(62,29,8,106,60,0,10,array);
+                coffeeN = 4;
+                stack_per=0.09;
+                console.log("makiyato");
                 contents.waterdrop.setBall();
             }
             if (button.id == "reset") {
                 reset();
             }
-            function reset() {
+            function reset() {  
                 console.log("reset");
+                deleteArray(array);
                 contents.waterdrop.resetBall();
                 contents.waveGroup.setCoffee(0, -3);
                 stack = 0;
@@ -328,54 +356,108 @@ let stack = 0;
 let stack_per = 0;
 //n 번째 돌아가는중
 let check = 0;
-let coffeeN=1;
-//
+let coffeeN=0;
+//0
 //에스프레소 #3E1D08  
-
-let ame = [
+const array = new Array();
+function coffeeWaveArray(r,g,b,mr,mg,mb,N , array){
+    array.push(`rgb(${r}, ${g}, ${b})`)
+    let tmpR ,tmpG,tmpB = 0;
+    for(let i=1;i<N;i++){
+        tmpR=Math.round(r-(r-mr)/N*i);
+        tmpG=Math.round(g-(g-mg)/N*i);
+        tmpB=Math.round(b-(b-mb)/N*i);
+        array.push(`rgb(${tmpR}, ${tmpG}, ${tmpB})`)
+    }
+}
+function deleteArray(array){
+    if(array.length===null){return}
+    for (let index = 0; index < array.length; ) {
+        array.pop();
+    }
+}
+let ballColor = [
     //ball color
     [
-        'skyblue',
-        'brown',
-        'brown',
-        'brown',
-        'gray',
-        'gray',
+        //wawter
+        'cornflowerblue',
+        //coffee
+        '#3E1D08',
+        //milk
+        'white',
+        //milkform
+        '#fffaeb',
+        //caramel
+        '#c14900',
     ],
+    //americano
     [
-        'red',
-        'yellow',
-        'orange',
-        'black',
-        '#b1dce2',
-        '#ffd7b3',
+        '#3E1D08','#3E1D08','#3E1D08',
+        'cornflowerblue','cornflowerblue',
+        'cornflowerblue','cornflowerblue',
+        'cornflowerblue','cornflowerblue',
     ],
+    //ca
     [
-        'yellow',
-        'yellow',
-        'yellow',
-        '#green',
-        '#b1dce2',
-        '#ffd7b3',
+        '#3E1D08','#3E1D08',
+        'white','white','white','white',//6
+        '#fffaeb','#fffaeb','#fffaeb',
+        '#fffaeb','#fffaeb','#fffaeb',
+        '#fffaeb','#fffaeb',
     ],
+    //라뗴
     [
-        'black',
-        'black',
-        'black',
-        '#green',
-        '#b1dce2',
-        '#ffd7b3',
+        'white','white','white','white',
+        'white','white','white','white',
+        '#3E1D08','#3E1D08',
+        '#fffaeb','#fffaeb',
     ],
+    //마키아토
+    [
+        '#3E1D08','#3E1D08',
+        'white','white','white','white',
+        '#fffaeb','#fffaeb',
+        '#c14900','#c14900',
+
+    ]
 ]
+
 
 let material = [
     //ball color
     [
         '<span class="water">●</span>water ',
-        '<span class="coffeee">●</span>coffee ',
+        '<span class="coffeee">●</span>espresso ',
+        '<span class="milk">○</span>milk ',
+        '<span class="milkform">●</span>milkform ',
+        '<span class="caramel">●</span>caramel ',
         '',
-        '',
-        '<span class="milk">●</span>milk ',
-        '',
-    ]
+    ],
+    //americano
+    [
+        '<span class="coffeee">●</span>espresso ',   '',   '',
+        '<span class="water">●</span>water ',  '','','', '', '', '',
+    ],
+    //cafucino
+    [
+        '<span class="coffeee">●</span>espresso ',  '',
+        '<span class="milk">○</span>milk ',  '',  '',  '',
+        '<span class="milkform">●</span>milkform ',
+        '',   '',   '',  '',  '',  '',  '',  '',  '',
+    ],
+        //라떼는말이야
+    [
+
+        '<span class="milk">○</span>milk ',  '',  '',  '', '', '','','',
+        '<span class="coffeee">●</span>espresso ',   '',
+        '<span class="milkform">●</span>milkform ','',
+    ],        //마키야토
+    [
+
+        '<span class="coffeee">●</span>espresso ','',
+        '<span class="milk">○</span>milk ','','','',
+        '<span class="milkform">●</span>milkform ','',
+        '<span class="caramel">●</span>caramel ','',
+
+    ],
 ]

@@ -1,5 +1,6 @@
 html{
     display: flex;
+    overflow: hidden;
 }
 header{
     margin-top: 50px;
@@ -12,6 +13,16 @@ section {
 }
 img{
     width: 100%;
+}
+.doubleimage img{
+    height: 20vh;
+    overflow: hidden;
+    object-fit: cover;
+}
+.Grinding img{
+    height: 27vh;
+    overflow: hidden;
+    object-fit: cover;
 }
 .imageBox,
 .imageBox-Blending{
@@ -90,4 +101,7 @@ img{
     .blnk{
         width: 80px;
     }    
+    .doubleimage img{
+        height: 100%;
+    }
 }

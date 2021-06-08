@@ -7,10 +7,10 @@
   background: gray;
 }
 nav{
+    position: absolute;
     top:0vh;
     width: 100vw;
     height: 55px;
-    position: absolute;
 }
 .navbar li a{
     font-size: 3rem;
@@ -30,15 +30,15 @@ nav{
     width: 100%;
 }
 .navbar_menu{
-    z-index: 20;
-    margin-top: 55px;
-    position:absolute;
-    background-color: whitesmoke;
-    display: none;
-    width: 100%;
-    text-align: center;
-    padding-left: 0;
-
+  margin-top: 55px;
+  position:absolute;
+  background-color: whitesmoke;
+  display: none;
+  width: 100%;
+  text-align: center;
+  padding-left: 0;
+  z-index: 10;
+  
 }
 .navbar_toogleBtn{
     position: absolute;
@@ -49,6 +49,8 @@ nav{
     display: block;
 }
 
+
+/* hambuger */
 .ham {
     display: inline-block;
     cursor: pointer;

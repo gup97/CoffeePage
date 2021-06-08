@@ -63,8 +63,14 @@ html{
 
 .button{
     position: fixed;
-    grid-gap: 4vw;
+    grid-gap: 2vw;
     margin-top: 70vh;
+    z-index: 14;
+    display: flex;
+    transform: scale(2.0);
+}
+button:hover{
+    cursor:pointer;
 }
 #mini{
     
@@ -75,12 +81,7 @@ html{
 }
 
 
-.button{
-    position:absolute;
-    z-index: 14;
-    display: flex;
-    transform: scale(1.3);
-}
+
 
 .temp{
     position: fixed;
@@ -96,15 +97,24 @@ html{
 }
 
 .water{
+    color: rgb(100, 149, 237);
     color: cornflowerblue;
     font-size: 70%;
 }
 .coffeee{
-    color: brown;
+    color: #3E1D08;
     font-size: 70%;
 }
 .milk{
-    color:cornsilk;
+    color:black;
+    font-size: 70%;
+}
+.milkform{
+    color: #fffaeb;
+    font-size: 70%;
+}
+.caramel{
+    color: #c14900;
     font-size: 70%;
 }
 header{
