@@ -20,11 +20,11 @@
 @media (max-width: 480px) {
 
 }
-/*///////////////////// roastimg area //////////////////////////*/
+/*///////////////////// roastimg area ////////x//////////////////*/
 .roasting__grid {
     position: absolute;
     bottom: 2vh;
-    width: 80%;
+    width: 70%;
     height: 100%;
 
     margin-left: 10%;
@@ -64,6 +64,8 @@
 
   @media (max-width: 748px) {
     .roasting__grid {
+      width: 80%;
+
       grid-template-areas:
       'rtitle'
       'rimage1'
@@ -243,7 +245,7 @@
 .brewing__grid {
   position: absolute;
   bottom: 2vh;
-  width: 80%;
+  width: 70%;
   height: 100%;
 
   margin-left: 10%;

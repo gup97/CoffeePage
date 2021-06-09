@@ -5,6 +5,7 @@ const navbarLinks = document.querySelectorAll(".navbar a");
 navbarToggler.addEventListener("click", navbarTogglerClick);
 
 function navbarTogglerClick() {
+
 	navbarToggler.classList.toggle("open-navbar-toggler");
 	navbarMenu.classList.toggle("open");
 }
@@ -12,11 +13,17 @@ function navbarTogglerClick() {
 // navbarLinks.forEach(elem => elem.addEventListener("click", navbarLinkClick));
 
 for (let i = 0; i < navbarLinks.length; i++) {
+
 	navbarLinks[i].addEventListener("click", navbarLinkClick);
 }
 
 function navbarLinkClick(event) {
+	const targetId = event.currentTarget.getAttribute("href") === "#" ? "header" : event.currentTarget.getAttribute("href");
+	if(targetId==="#Wave"){
+		location.href = "./wave.html";
 
+		return
+	}
 	smoothScroll(event); // Call the "smoothScroll" function
 
 	if (navbarMenu.classList.contains("open")) { // Close navbarMenu in smaller screens

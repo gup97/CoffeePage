@@ -149,3 +149,26 @@ header{
             transform: scale(1.4);
     }
 }
+nav{
+    position: absolute;
+    top:0vh;
+    width: 100vw;
+    height: 55px;
+}
+.navbar li a{
+    font-size: 3rem;
+    width: 100vw;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    flex-direction: column;
+}
+.logo{
+    width: 120px;
+}
+.navbar_logo{
+    width: 100%;
+}
