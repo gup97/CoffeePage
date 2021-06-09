@@ -19,7 +19,7 @@ for (let i = 0; i < navbarLinks.length; i++) {
 
 function navbarLinkClick(event) {
 	const targetId = event.currentTarget.getAttribute("href") === "#" ? "header" : event.currentTarget.getAttribute("href");
-	if(targetId==="#Wave"){
+	if(targetId==="#Making"){
 		location.href = "./wave.html";
 
 		return
