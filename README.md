@@ -17,3 +17,18 @@ made by 윤성호
 - menu layout 구성
 ---
 
+
+
+
+----
+index.html  - loading.js  -> lay.html
+            - intro.css
+
+lay.html    - newlay.css 
+            - newnav
+            
+wave.js     - app.js
+            - wave.css
+
+
+font.css 공용
