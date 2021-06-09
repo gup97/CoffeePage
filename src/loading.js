@@ -30,7 +30,7 @@ function pageTrans() {
         console.log("test loader()");
 
         setTimeout(function () {
-            console.log("test2");
+            console.log("page move");
             loading.parentElement.removeChild(loading);
             location.href = "./lay.html";
             //main
