@@ -20,7 +20,7 @@ img{
     object-fit: cover;
 }
 .Grinding img{
-    height: 27vh;
+    height: 22vh;
     overflow: hidden;
     object-fit: cover;
 }
@@ -40,10 +40,10 @@ img{
     background-position: center;
 }
 .pic-img{
-    position: fixed;
+    display: block;
+    overflow: hidden;
     width: 100vw;
     height: 100vh;
-    margin: 0px;
 }
 .arrow{
     position:absolute;

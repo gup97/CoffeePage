@@ -14,7 +14,7 @@ body{
     position: fixed;
     display: flex;
     top:15vh;
-    font-size: 2em;
+    font-size: 1.3em;
 }
 
 .tmp{
@@ -84,7 +84,11 @@ body{
 }
 @media (max-width: 480px) {
     :root{
-         --water-scale:1;
+
+         --water-scale:1.7;
+    }
+    .loading-text{
+        top:7vh;
     }
 }
 

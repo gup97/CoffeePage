@@ -85,7 +85,7 @@ button:hover{
 
 .temp{
     position: fixed;
-    width: 70vw;
+    width: 100vw;
     height: 6.1vh;
     background-color: white;
     top:70vh;   
@@ -93,6 +93,7 @@ button:hover{
     z-index: 13;
 }
 .recipe{
+    width: 100%;
     font-size: 4vh;
 }
 
@@ -137,4 +138,14 @@ header{
     left: 0;
     right: 0;
     z-index: 9;
+}
+@media (max-width: 480px) {
+    .button{
+            position: fixed;
+            grid-gap: 2vw;
+            margin-top: 70vh;
+            z-index: 14;
+            display: flex;
+            transform: scale(1.4);
+    }
 }
