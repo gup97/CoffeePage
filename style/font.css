@@ -28,6 +28,21 @@ CSS */
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/116angmuburi.woff') format('woff'); 
     font-weight: normal; 
     font-style: normal; } 
+/* 얇은 글자(색상 #424242) */
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+/* 두꺼운 글자(색상 #251105) */
+@font-face {
+     font-family: 'S-CoreDream-8Heavy';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
 html, button,.angmu{
     font-family: '116angmuburi';
 }
@@ -49,3 +64,4 @@ header{
         font-size: 2rem;
         
 }
+

@@ -2,13 +2,20 @@
     width: 100%;
 }
 
-
-.explain{
-    color: black;
-    font-family: 'NanumSquareRound';
-    border: 2px solid;
+.navbar_logo{
+  width: 100%;
+}
+ .explain{
+  font-family: 'S-CoreDream-5Medium';
+  color : #424242;
     font-size: 1.4rem;
 }
+.thick{
+  font-family: 'S-CoreDream-8Heavy';
+  color : #251105;
+}
+
+
 .eng{
     position: relative;
     top:70%;

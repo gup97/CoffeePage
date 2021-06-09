@@ -12,7 +12,7 @@
     list-style:none;
   }
   .navbar {
-    background-color: rgba(138, 85, 0, 0.479);
+    background-color: rgba(95, 95, 95, 0.527);
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.561);
     width: 100%;
@@ -27,7 +27,18 @@
   }
   .navbar a {
     text-decoration: none;
-    color: #fff;
+    color: rgb(255, 255, 255);
+  }
+  .logo{
+    position: fixed;
+    width: 200px;
+    left: 2vw;
+    height: 200;
+  }
+  .navbar_logo{
+    fill: aliceblue;
+    color: wite;
+    width: 100%;
   }
   .navbar a.navbar-brand {
     float: left;
@@ -60,7 +71,7 @@
     padding: 0 30px;
   }
   .navbar ul li a:hover {
-    background-color: rgba(85, 60, 20, 0.568);
+    background-color: rgba(7, 6, 5, 0.568);
   }
   .navbar .navbar-toggler {
     display: none;
@@ -104,7 +115,7 @@
     .navbar ul {
       width: 100%;
       padding: 0;
-      background-color: rgba(34, 33, 31, 0.698);
+      background-color: rgba(114, 113, 111, 0.698);
       /* height: auto; */
       height: 100vh;
       max-height: 0;
@@ -128,8 +139,8 @@
       top: 20px;
       right: 20px;
       background-color: transparent;
-      color: #fff;
-      border: 3px solid #fff;
+      color: rgb(0, 0, 0);
+      border: 3px solid rgb(255, 255, 255);
       /* border: none; */
       /* border-radius: 4px; */
       outline: none;
@@ -141,7 +152,7 @@
     .navbar .navbar-toggler span::after {
       display: block;
       content: '';
-      background-color: #fff;
+      background-color: rgb(255, 255, 255);
       height: 3px;
       width: 28px;
       border-radius: 4px;
