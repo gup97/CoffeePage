@@ -25,6 +25,10 @@ color : #251105;
   position: relative;
 }
 @media (max-width: 480px) {
+.explain{
+  font-size: 0.7rem;
+
+}
 
 }
 /*///////////////////// roastimg area ////////x//////////////////*/
