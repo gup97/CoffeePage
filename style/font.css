@@ -31,7 +31,8 @@ CSS */
 html, button,.angmu{
     font-family: '116angmuburi';
 }
-    .eng{
+.eng{
+        color: black;
         font-family: 'Fugaz One';
 }
 body{
