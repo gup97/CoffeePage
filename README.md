@@ -8,10 +8,10 @@
 - [결과](#후기)
 ---
 ### preview
-intro
-![Animation](https://user-images.githubusercontent.com/80537765/123540308-41ce8400-d779-11eb-9c06-6e3f1c854d77.gif)
-interaction
-![intrer](https://user-images.githubusercontent.com/80537765/123540451-fcf71d00-d779-11eb-906a-1065bf704cbe.gif)
+intro  
+![Animation](https://user-images.githubusercontent.com/80537765/123540308-41ce8400-d779-11eb-9c06-6e3f1c854d77.gif)  
+interaction  
+![intrer](https://user-images.githubusercontent.com/80537765/123540451-fcf71d00-d779-11eb-906a-1065bf704cbe.gif)  
 
 ---
 ### projectdrawing
