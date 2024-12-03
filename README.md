@@ -1,4 +1,4 @@
-# [모바일 멀티미디어 과제](https://gup97.github.io/CoffeePage/)
+# [사이트 바로가기](https://gup97.github.io/CoffeePage/)
 
 목차
 - [미리보기](#preview)
